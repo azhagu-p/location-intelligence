@@ -1,0 +1,42 @@
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    margin-top: 80px;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    height: 690px;
+    flex-direction: column;
+    background: #010412;
+
+}
+
+.container{
+    background-image: url(../assets/snazzy-image.jpg);
+    display: flex;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.h1{
+    color:white;
+    display: flex;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.checkbox{
+    color: white;
+}
