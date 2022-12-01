@@ -14,8 +14,11 @@ import { styled, Checkbox } from "@mui/material";
 import Link from "@mui/material/Link";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import {IconButton,TextField,FormControl,InputLabel} from "@mui/material";
 
-const ColorButton = styled(Button)(({ theme }) => ({
+const LoginButton = styled(Button)(({ theme }) => ({
     marginTop: 10,
     width: 350,
     height: 50,
@@ -45,6 +48,27 @@ const LoginIn = () => {
             })
             .catch((err) => console.error(err));
     };
+    const handleChange = (prop) => (event) => {
+        setValues({ ...values, [prop]: event.target.value });
+      };
+    
+      const handleClickShowPassword = () => {
+        setValues({
+          ...values,
+          showPassword: !values.showPassword,
+        });
+      };
+    
+      const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+      };
+
+      const handlePassVisibility = () => {
+        setValues({
+          ...values,
+            showPass: !values.showPass,
+        })
+      };
     return (
         <Container maxWidth className="container">
             <Box className="flex-container">
@@ -55,44 +79,68 @@ const LoginIn = () => {
                     </Box>
                     <form onSubmit={handleSubmit}>
                         <Box className="form">
-                            <Input
-                                fullWidth
-                                placeholder="Your mail"
-                                sx={{ color: "white", margin: "20px" }}
-                                id="input-with-icon-adornment"
-                                startAdornment={
-                                    <InputAdornment position="start">
-                                        <img src={mail} alt="mail" />
-                                    </InputAdornment>
-                                }
-                                onChange={(e) =>
-                                    setValues({ ...values, email: e.target.value })
-                                }
-                            />
+                          
 
-                            <Input
-                                fullWidth
-                                type="password"
-                                placeholder="Password"
-                                sx={{ color: "white", margin: "20px" }}
-                                startAdornment={
-                                    <InputAdornment position="start">
-                                        <img src={lock} alt="lock" />
-                                    </InputAdornment>
-                                }
-                                onChange={(e) => setValues({ ...values, pass: e.target.value })}
-                            />
+                                <TextField 
+                                    focused
+                                    sx={{ m: 3 }}
+                                    type="text"
+                                    fullWidth
+                                    placeholder="Your mail"
+                                    variant="standard"
+                                    required
+                                    onChange={(e) => setValues({...values, pass:e.target.value})}
+                                    InputProps={{
+                                        style: {color: "white"},
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <img src={mail} alt="mail"/>
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                                    <TextField 
+                                    focused
+                                    sx={{ m: 3 }}
+                                    type={values.showPass ? "text" : "password"}
+                                    fullWidth
+                                    placeholder="Password"
+                                    variant="standard"
+                                    required
+                                    onChange={(e) => setValues({...values, pass:e.target.value})}
+                                    InputProps={{
+                                        style: {color: "white",borderBlockColor:"white"},
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <img src={lock} alt="lock"/>
+                                            </InputAdornment>
+                                        ),
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <IconButton
+                                                    onClick={handlePassVisibility}
+                                                    aria-label="toggle password"
+                                                    edge="end"
+                                                    sx={{color:"grey"}}
+                                                >
+                                                    {values.showPass ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
                         </Box>
                         <Box className="checkbox">
                             <FormControlLabel
                                 label="Remember me"
-                                control={<Checkbox value="" sx={{ color: "white" }} />}
+                                sx={{ color: "grey" }}
+                                control={<Checkbox value="" sx={{ color: "grey" }} />}
                             />
                             <Link href="#" ml={10}>
                                 Forget Password
                             </Link>
                         </Box>
-                        <ColorButton type="submit">Sign in</ColorButton>
+                        <LoginButton type="submit" sx={{ textTransform: 'none' }}>Sign in</LoginButton>
                     </form>
                 </Box>
             </Box>
