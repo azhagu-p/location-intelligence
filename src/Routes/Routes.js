@@ -7,6 +7,8 @@ import Product from "../pages/Products";
 import Dashboard from "../pages/Dashboard";
 import React from "react";
 import SelectedCountry from "../pages/SelectedCountry";
+import CrumbsDelete from "../pages/CrumbsDelete";
+import DeleteCrumbs from "../pages/DeleteCrumbs";
 
 const UseRout = () => { return  useRoutes([
   {
@@ -36,6 +38,14 @@ const UseRout = () => { return  useRoutes([
     {
         path: "/selectcountry",
         element: <SelectedCountry/>
+    },
+    {
+        path: "/crumbsdelete",
+        element: <CrumbsDelete/>
+    },
+    {
+        path: "/deletecrumbs",
+        element: <DeleteCrumbs/>
     }
 ])};
 
