@@ -13,6 +13,7 @@ import { styled, Checkbox } from "@mui/material";
 import Link from "@mui/material/Link";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Input from "@mui/material/Input";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { IconButton, TextField } from "@mui/material";
@@ -37,7 +38,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://192.168.1.91:8000/api/auth/token/", {
+      .post("http://192.168.1.91:8000/api/auth/login", {
         email: values.email,
         password: values.pass,
       })
@@ -79,71 +80,70 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <Box className="form">
               <TextField
-                focused
-                sx={{ m: 3 }}
-                type="text"
-                fullWidth
-                placeholder="Your mail"
-                variant="standard"
-                required
-                onChange={(e) => setValues({ ...values, pass: e.target.value })}
-                InputProps={{
-                  style: { color: "white" },
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <img src={mail} alt="mail" />
-                    </InputAdornment>
-                  ),
-                }}
+                  focused
+                  fullWidth
+                  sx={{ m: 3 }}
+                  type="text"
+                  placeholder="Your mail"
+                  variant="standard"
+                  InputProps={{
+                    style: { color: "white" },
+                    startAdornment: (
+                        <InputAdornment position="start">
+                          <img src={mail} alt="mail" />
+                        </InputAdornment>
+                    ),
+                  }}
+                  onChange={(e) =>
+                      setValues({ ...values, email: e.target.value })
+                  }
               />
+
               <TextField
-                focused
-                sx={{ m: 3 }}
-                type={values.showPass ? "text" : "password"}
-                fullWidth
-                placeholder="Password"
-                variant="standard"
-                required
-                onChange={(e) => setValues({ ...values, pass: e.target.value })}
-                InputProps={{
-                  style: { color: "white", borderBlockColor: "white" },
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <img src={lock} alt="lock" />
-                    </InputAdornment>
-                  ),
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={handlePassVisibility}
-                        aria-label="toggle password"
-                        edge="end"
-                        sx={{ color: "grey" }}
-                      >
-                        {values.showPass ? (
-                          <VisibilityIcon />
-                        ) : (
-                          <VisibilityOffIcon />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
+                  focused
+                  fullWidth
+                  sx={{ m: 3 }}
+                  type={values.showPass ? "text" : "password"}
+                  variant="standard"
+                  required
+                  placeholder="Password"
+                  onChange={(e) => setValues({ ...values, pass: e.target.value })}
+                  InputProps={{
+                    style: { color: "white", borderBlockColor: "white" },
+                    startAdornment: (
+                        <InputAdornment position="start">
+                          <img src={lock} alt="lock" />
+                        </InputAdornment>
+                    ),
+                    endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                              onClick={handlePassVisibility}
+                              aria-label="toggle password"
+                              edge="end"
+                              sx={{ color: "grey" }}
+                          >
+                            {values.showPass ? (
+                                <VisibilityIcon />
+                            ) : (
+                                <VisibilityOffIcon />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                    ),
+                  }}
               />
             </Box>
             <Box className="checkbox">
               <FormControlLabel
-                label="Remember me"
-                sx={{ color: "grey" }}
-                control={<Checkbox value="" sx={{ color: "grey" }} />}
+                  label="Remember me"
+                  control={<Checkbox value="" sx={{ color: "white" }} />}
               />
               <Link href="#" ml={10}>
                 Forget Password
               </Link>
             </Box>
-            <LoginButton type="submit" sx={{ textTransform: "none" }}>
-              Sign in
-            </LoginButton>
+            <LoginButton type="submit">Sign in</LoginButton>
           </form>
         </Box>
       </Box>
