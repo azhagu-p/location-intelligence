@@ -44,7 +44,7 @@ const LoginIn = () => {
             })
             .then((res) => {
                 localStorage.setItem("token", res.data.access);
-                navigate("/dashboard");
+                navigate("/country");
             })
             .catch((err) => console.error(err));
     };

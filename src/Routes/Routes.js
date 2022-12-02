@@ -10,7 +10,7 @@ import SelectedCountry from "../pages/SelectedCountry";
 
 const UseRout = () => { return  useRoutes([
   {
-        path: "/as",
+        path: "/country",
         element: <SelectedCountry/>,
     },
     {
