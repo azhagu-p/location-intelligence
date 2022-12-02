@@ -6,12 +6,13 @@ import Setnewpassword from "../pages/setnewpassword"
 import Product from "../pages/Products";
 import Dashboard from "../pages/Dashboard";
 import React from "react";
+import SelectedCountry from "../pages/SelectedCountry";
 
 const UseRout = () => { return  useRoutes([
-   /* {
-        path: "/",
-        element: <Home/>,
-    },*/
+  {
+        path: "/as",
+        element: <SelectedCountry/>,
+    },
     {
         path: "/",
         element: <Login/>
@@ -31,6 +32,10 @@ const UseRout = () => { return  useRoutes([
     {
         path: "/dashboard",
         element: <Dashboard/>
+    },
+    {
+        path: "/selectcountry",
+        element: <SelectedCountry/>
     }
 ])};
 
