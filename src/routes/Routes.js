@@ -1,12 +1,10 @@
 import { useRoutes } from "react-router-dom";
-import Home from "../pages/HomePage";
-import Login from "../pages/auth/LoginPage";
+import Login from "../pages/auth/Login.js";
 import Forgotpassword from "../pages/auth/forgotpassword";
 import Setnewpassword from "../pages/auth/setnewpassword";
-import Product from "../pages/Products";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/dashboard/Dashboard";
 import React from "react";
-import SelectedCountry from "../pages/SelectedCountry";
+import SelectedCountry from "../pages/selectedCountry/SelectedCountry.js";
 
 const UseRout = () => {
   return useRoutes([
@@ -25,10 +23,6 @@ const UseRout = () => {
     {
       path: "/setnewpassword",
       element: <Setnewpassword />,
-    },
-    {
-      path: "/products",
-      element: <Product />,
     },
     {
       path: "/dashboard",

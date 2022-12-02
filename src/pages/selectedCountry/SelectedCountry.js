@@ -1,7 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./SelectedCountry.css";
-// import Button from '@material-ui/core/Button';
 import Button from "@mui/material/Button";
 import "slick-carousel/slick/slick.css";
 
@@ -10,7 +8,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { Component } from "react";
 import Slider from "react-slick";
-import uae from "../assets/image 2.png";
+import uae from "../../assets/image 2.png";
 
 export default class MultipleItems extends Component {
   render() {

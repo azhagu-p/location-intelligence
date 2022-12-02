@@ -4,14 +4,9 @@ import { Box, FormLabel } from "@mui/material";
 import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Button } from "@mui/material";
-import mail from "../../assets/svg/sms.svg";
 import lock from "../../assets/svg/lock.svg";
-
-import Frame from "../../assets/svg/Frame.svg";
 import Container from "@mui/material/Container";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import { styled, Checkbox } from "@mui/material";
-import Link from "@mui/material/Link";
+import { styled } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Box } from "@mui/material";
-import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Button } from "@mui/material";
 import mail from "../../assets/svg/sms.svg";
@@ -16,7 +15,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { IconButton, TextField, FormControl, InputLabel } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 
 const LoginButton = styled(Button)(({ theme }) => ({
   marginTop: 10,
@@ -27,7 +26,7 @@ const LoginButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#3C4DE7",
 }));
 
-const LoginIn = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
@@ -152,4 +151,4 @@ const LoginIn = () => {
   );
 };
 
-export default LoginIn;
+export default Login;
