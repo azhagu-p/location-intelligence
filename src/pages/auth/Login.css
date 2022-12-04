@@ -21,6 +21,13 @@
     height: 390px;
     margin-top: 250px;
 }
+
+.card-3{
+    width: 520px;
+    height: 490px;
+    margin-top: 250px;
+}
+
 .container{
     background-image: url(../../assets/snazzy-image.jpg);
     display: flex;

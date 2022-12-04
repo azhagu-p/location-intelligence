@@ -27,11 +27,7 @@ const UseRout = () => {
     {
       path: "/dashboard",
       element: <Dashboard />,
-    },
-    {
-      path: "/selectcountry",
-      element: <SelectedCountry />,
-    },
+    }
   ]);
 };
 

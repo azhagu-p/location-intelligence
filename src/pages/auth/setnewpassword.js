@@ -51,7 +51,7 @@ const LoginIn = () => {
   return (
     <Container maxWidth className="container">
       <Box className="flex-container">
-        <Box className="form-container card-2">
+        <Box className="form-container card-3">
           <Box>
             <h2 className="h1">Set up new password</h2>
           </Box>
