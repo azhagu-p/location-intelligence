@@ -13,7 +13,6 @@ import { styled, Checkbox } from "@mui/material";
 import Link from "@mui/material/Link";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Input from "@mui/material/Input";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { IconButton, TextField } from "@mui/material";
@@ -48,21 +47,7 @@ const Login = () => {
       })
       .catch((err) => console.error(err));
   };
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
-  };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
+  
   const handlePassVisibility = () => {
     setValues({
       ...values,
@@ -83,7 +68,7 @@ const Login = () => {
                   focused
                   fullWidth
                   sx={{ m: 3 }}
-                  type="text"
+                  type="email"
                   placeholder="Your mail"
                   variant="standard"
                   InputProps={{
@@ -139,7 +124,7 @@ const Login = () => {
                   label="Remember me"
                   control={<Checkbox value="" sx={{ color: "white" }} />}
               />
-              <Link href="#" ml={10}>
+              <Link href="/forgotpassword" ml={10}>
                 Forget Password
               </Link>
             </Box>

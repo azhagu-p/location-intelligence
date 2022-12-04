@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Box, FormLabel } from "@mui/material";
-import Input from "@mui/material/Input";
+import { Box, TextField} from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Button } from "@mui/material";
 import mail from "../../assets/svg/sms.svg";
-import lock from "../../assets/svg/lock.svg";
 
-import Frame from "../../assets/svg/Frame.svg";
 import Container from "@mui/material/Container";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import { styled, Checkbox } from "@mui/material";
-import Link from "@mui/material/Link";
+import { styled } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -54,23 +49,27 @@ const LoginIn = () => {
           </Box>
           <form onSubmit={handleSubmit}>
             <Box className="form">
-              <FormLabel style={{ color: "white" }}>
-                Enter your email address
-              </FormLabel>
-              <Input
-                fullWidth
-                placeholder="Your mail"
-                sx={{ color: "white", margin: "20px" }}
-                id="input-with-icon-adornment"
-                startAdornment={
-                  <InputAdornment position="start">
-                    <img src={mail} alt="mail" />
-                  </InputAdornment>
-                }
-                onChange={(e) =>
-                  setValues({ ...values, email: e.target.value })
-                }
+            <TextField
+                  label="Enter your mail address"
+                  InputLabelProps={{style: {fontSize: 25,color: "grey"}}}
+                  focused
+                  fullWidth
+                  sx={{ m: 3 }}
+                  type="email"
+                  variant="standard"
+                  InputProps={{
+                    style: { color: "white", marginTop:"35px"},
+                    startAdornment: (
+                        <InputAdornment position="start">
+                          <img src={mail} alt="mail" />
+                        </InputAdornment>
+                    ),
+                  }}
+                  onChange={(e) =>
+                      setValues({ ...values, email: e.target.value })
+                  }
               />
+
             </Box>
 
             <LoginButton type="submit" sx={{ textTransform: "none" }}>

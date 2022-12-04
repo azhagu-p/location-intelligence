@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Box, FormLabel } from "@mui/material";
-import Input from "@mui/material/Input";
+import { Box } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Button } from "@mui/material";
 import lock from "../../assets/svg/lock.svg";
@@ -9,6 +8,9 @@ import Container from "@mui/material/Container";
 import { styled } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import { IconButton, TextField } from "@mui/material";
 
 const LoginButton = styled(Button)(({ theme }) => ({
   marginTop: 10,
@@ -40,6 +42,12 @@ const LoginIn = () => {
       })
       .catch((err) => console.error(err));
   };
+  const handlePassVisibility = () => {
+    setValues({
+      ...values,
+      showPass: !values.showPass,
+    });
+  };
   return (
     <Container maxWidth className="container">
       <Box className="flex-container">
@@ -49,35 +57,73 @@ const LoginIn = () => {
           </Box>
           <form onSubmit={handleSubmit}>
             <Box className="form">
-              <FormLabel style={{ color: "grey" }}>New Password</FormLabel>
-              <Input
-                fullWidth
-                type="password"
-                sx={{ color: "white", margin: "20px" }}
-                id="input-with-icon-adornment"
-                startAdornment={
-                  <InputAdornment position="start">
-                    <img src={lock} alt="lock" />
-                  </InputAdornment>
-                }
-                onChange={(e) =>
-                  setValues({ ...values, email: e.target.value })
-                }
+            <TextField
+                  label="New Password"
+                  InputLabelProps={{style: {fontSize: 25,color: "grey"}}}
+                  focused
+                  fullWidth
+                  sx={{ m: 3 }}
+                  type={values.showPass ? "text" : "password"}
+                  variant="standard"
+                  onChange={(e) => setValues({ ...values, pass: e.target.value })}
+                  InputProps={{
+                    style: { color: "white",marginTop: "35px" },
+                    startAdornment: (
+                        <InputAdornment position="start">
+                          <img src={lock} alt="lock" />
+                        </InputAdornment>
+                    ),
+                    endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                              onClick={handlePassVisibility}
+                              aria-label="toggle password"
+                              edge="end"
+                              sx={{ color: "grey" }}
+                          >
+                            {values.showPass ? (
+                                <VisibilityIcon />
+                            ) : (
+                                <VisibilityOffIcon />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                    ),
+                  }}
               />
-              <FormLabel style={{ color: "grey" }}>Confirm Password</FormLabel>
-              <Input
-                fullWidth
-                type="password"
-                sx={{ color: "white", margin: "20px" }}
-                id="input-with-icon-adornment"
-                startAdornment={
-                  <InputAdornment position="start">
-                    <img src={lock} alt="lock" />
-                  </InputAdornment>
-                }
-                onChange={(e) =>
-                  setValues({ ...values, email: e.target.value })
-                }
+              <TextField
+                  label="Confirm Password"
+                  InputLabelProps={{style: {fontSize: 25,color: "grey"}}}
+                  focused
+                  fullWidth
+                  sx={{ m: 3 }}
+                  type={values.showPass ? "text" : "password"}
+                  variant="standard"
+                  onChange={(e) => setValues({ ...values, pass: e.target.value })}
+                  InputProps={{
+                    style: { color: "white", borderBlockColor: "white",marginTop: "35px" },
+                    startAdornment: (
+                        <InputAdornment position="start">
+                          <img src={lock} alt="lock" />
+                        </InputAdornment>
+                    ),
+                    endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                              onClick={handlePassVisibility}
+                              aria-label="toggle password"
+                              edge="end"
+                              sx={{ color: "grey" }}
+                          >
+                            {values.showPass ? (
+                                <VisibilityIcon />
+                            ) : (
+                                <VisibilityOffIcon />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                    ),
+                  }}
               />
             </Box>
 
