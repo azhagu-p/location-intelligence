@@ -1,15 +1,13 @@
-import './App.css';
+import "./App.css";
 import React from "react";
-import UseRout from "./Routes/Routes";
+import UseRoute from "./Routes/Routes.js";
 
 function App() {
-
-
-    return (
-        <div>
-            <UseRout/>
-        </div>
-    )
+  return (
+    <div>
+      <UseRoute />
+    </div>
+  );
 }
 
 export default App;

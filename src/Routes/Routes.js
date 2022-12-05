@@ -1,52 +1,48 @@
-import {useRoutes} from "react-router-dom";
-import Home from "../pages/HomePage";
-import Login from "../pages/LoginPage";
-import Forgotpassword from "../pages/forgotpassword"
-import Setnewpassword from "../pages/setnewpassword"
-import Product from "../pages/Products";
-import Dashboard from "../pages/Dashboard";
+import { useRoutes } from "react-router-dom";
+import Login from "../pages/auth/Login.js";
+import Forgotpassword from "../pages/auth/forgotpassword";
+import Setnewpassword from "../pages/auth/setnewpassword";
+import Dashboard from "../pages/dashboard/Dashboard";
 import React from "react";
-import SelectedCountry from "../pages/SelectedCountry";
-import CrumbsDelete from "../pages/CrumbsDelete";
-import DeleteCrumbs from "../pages/DeleteCrumbs";
+import SelectedCountry from "../pages/selectedCountry/SelectedCountry";
+import DeleteCrumbs from "../pages/deleteCrumbs/DeleteCrumbs";
+import CrumbsDelete from "../pages/crumbsDelete/CrumbsDelete";
 
-const UseRout = () => { return  useRoutes([
-  {
-        path: "/country",
-        element: <SelectedCountry/>,
+const UseRout = () => {
+  return useRoutes([
+    {
+      path: "/country",
+      element: <SelectedCountry />,
     },
     {
-        path: "/",
-        element: <Login/>
+      path: "/",
+      element: <Login />,
     },
     {
-        path:"/forgotpassword",
-        element: <Forgotpassword/>
+      path: "/forgotpassword",
+      element: <Forgotpassword />,
     },
     {
-        path:"/setnewpassword",
-        element: <Setnewpassword/>
+      path: "/setnewpassword",
+      element: <Setnewpassword />,
     },
     {
-        path: "/products",
-        element: <Product/>
+      path: "/dashboard",
+      element: <Dashboard />,
     },
     {
-        path: "/dashboard",
-        element: <Dashboard/>
+      path: "/selectcountry",
+      element: <SelectedCountry />,
     },
     {
-        path: "/selectcountry",
-        element: <SelectedCountry/>
+      path: "/deletecrumbs",
+      element: <DeleteCrumbs />,
     },
     {
-        path: "/crumbsdelete",
-        element: <CrumbsDelete/>
-    },
-    {
-        path: "/deletecrumbs",
-        element: <DeleteCrumbs/>
+      path: "/crumbsdelete",
+      element: <CrumbsDelete />,
     }
-])};
+  ]);
+};
 
 export default UseRout;

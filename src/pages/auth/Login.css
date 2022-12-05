@@ -22,7 +22,7 @@
     margin-top: 250px;
 }
 .container{
-    background-image: url(../assets/snazzy-image.jpg);
+    background-image: url(../../assets/snazzy-image.jpg);
     display: flex;
     height: 100vh;
     background-position: center;
