@@ -8,7 +8,11 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { Component } from "react";
 import Slider from "react-slick";
-import uae from "../../assets/image 2.png";
+import uae from "../../assets/c_uae.png";
+import qatar from "../../assets/c_qatar.png";
+import usa from "../../assets/c_usa.png";
+import ksa from "../../assets/c_ksa.png";
+import esp from "../../assets/c_esp.png";
 
 export default class MultipleItems extends Component {
   render() {
@@ -52,89 +56,56 @@ export default class MultipleItems extends Component {
               </p>
             </div>
             <div>
-              <img src={uae} alt="#" />
+              <img src={qatar} alt="#" />
               <p>
                 <span className="sticker">
                   <CheckCircleIcon
                     className="check-icon"
                     sx={{ color: "green" }}
                   />{" "}
-                  UAE
+                  QATAR
                 </span>
               </p>
             </div>
             <div>
-              <img src={uae} alt="#" />
+              <img src={usa} alt="#" />
               <p>
                 <span className="sticker">
                   <CheckCircleIcon
                     className="check-icon"
                     sx={{ color: "green" }}
                   />{" "}
-                  UAE
+                  USA
                 </span>
               </p>
             </div>
             <div>
-              <img src={uae} alt="#" />
+              <img src={ksa} alt="#" />
               <p>
                 <span className="sticker">
                   <CheckCircleIcon
                     className="check-icon"
                     sx={{ color: "green" }}
                   />{" "}
-                  UAE
+                  KSA
                 </span>
               </p>
             </div>
             <div>
-              <img src={uae} alt="#" />
+              <img src={esp} alt="#" />
               <p>
                 <span className="sticker">
                   <CheckCircleIcon
                     className="check-icon"
                     sx={{ color: "green" }}
                   />{" "}
-                  UAE
+                  ESP
                 </span>
               </p>
             </div>
-            <div>
-              <img src={uae} alt="#" />
-              <p>
-                <span className="sticker">
-                  <CheckCircleIcon
-                    className="check-icon"
-                    sx={{ color: "green" }}
-                  />{" "}
-                  UAE
-                </span>
-              </p>
-            </div>
-            <div>
-              <img src={uae} alt="#" />
-              <p>
-                <span className="sticker">
-                  <CheckCircleIcon
-                    className="check-icon"
-                    sx={{ color: "green" }}
-                  />{" "}
-                  UAE
-                </span>
-              </p>
-            </div>
-            <div>
-              <img src={uae} alt="#" />
-              <p>
-                <span className="sticker">
-                  <CheckCircleIcon
-                    className="check-icon"
-                    sx={{ color: "green" }}
-                  />{" "}
-                  UAE
-                </span>
-              </p>
-            </div>
+         
+    
+       
           </Slider>
           <Button variant="contained" className="btn-finish">
             Finish
