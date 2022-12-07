@@ -7,6 +7,7 @@ import React from "react";
 import SelectedCountry from "../pages/selectedCountry/SelectedCountry";
 import DeleteCrumbs from "../pages/deleteCrumbs/DeleteCrumbs";
 import CrumbsDelete from "../pages/crumbsDelete/CrumbsDelete";
+import Map from "../pages/map/map";
 import Modal from "../pages/modal/forgotpassword_popup"
 
 const UseRout = () => {
@@ -46,6 +47,10 @@ const UseRout = () => {
     {
       path: "/modal",
       element: <Modal />,
+    },
+    {
+      path: "/map",
+      element: <Map />,
     }
   ]);
 };

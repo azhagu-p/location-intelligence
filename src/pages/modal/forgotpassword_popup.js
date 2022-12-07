@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import '../crumbsDelete/CrumbsDelete.css';
+import '../modal/forgotpassword_popup.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import icon_i from '../../assets/icon_i.png'
