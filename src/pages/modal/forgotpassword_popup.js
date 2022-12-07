@@ -1,12 +1,9 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import '../crumbsDelete/CrumbsDelete.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import icon_i from '../../assets/icon_i.png'
 
 export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
@@ -23,24 +20,24 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <div className='login2'>
-      <div className='body'>
-          
-          <div className='main'>
+          <div className='body'>
+
+            <div className='main'>
               <div className='box'>
-                
+
                 <h3 className='box-title'>Confirm</h3>
                 <p className='box-msg'>Are you sure you want  to delete the card?</p>
                 <p className='box-msg'>Upon deletion the card will be moved to ‘Deleted’ folder and
-will remain there until the end of billingcycle.</p>
+                  will remain there until the end of billingcycle.</p>
                 <div className='btn-row'>
-                  <Button onClick={handleClose} variant="contained"className="btn">Cancel</Button>
-                  <Button variant="contained"className="btn">Delete</Button>
+                  <Button onClick={handleClose} variant="contained" className="btn">Cancel</Button>
+                  <Button variant="contained" className="btn">Delete</Button>
                 </div>
               </div>
+            </div>
           </div>
+
         </div>
-      
-    </div>
       </Modal>
     </div>
   );
