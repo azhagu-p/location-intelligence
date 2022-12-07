@@ -27,7 +27,7 @@
   padding: 20px 0 50px 0;
 }
 .login2  .slick-slide img,.login2  .slick-slide img~p{
-  width: 130px;
+  width: 110px;
   transition: .2s;
   filter: blur(8px);
   -webkit-filter: blur(8px);
