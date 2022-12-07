@@ -7,6 +7,7 @@ import React from "react";
 import SelectedCountry from "../pages/selectedCountry/SelectedCountry";
 import DeleteCrumbs from "../pages/deleteCrumbs/DeleteCrumbs";
 import CrumbsDelete from "../pages/crumbsDelete/CrumbsDelete";
+import Map from "../pages/map/map";
 import Modal from "../pages/modal/forgotpassword_popup"
 import CreateCrumbs from "../pages/modal/createcrumbs"
 
@@ -49,8 +50,13 @@ const UseRout = () => {
       element: <Modal />,
     },
     {
+<<<<<<< HEAD
       path: "/createcrumbs",
       element: <CreateCrumbs />,
+=======
+      path: "/map",
+      element: <Map />,
+>>>>>>> c030c6f77baab759198190e3ac15c125f4394640
     }
   ]);
 };

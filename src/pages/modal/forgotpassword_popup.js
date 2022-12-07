@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import '../crumbsDelete/CrumbsDelete.css';
+import '../modal/forgotpassword_popup.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
