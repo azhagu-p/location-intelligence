@@ -50,13 +50,12 @@ const UseRout = () => {
       element: <Modal />,
     },
     {
-<<<<<<< HEAD
       path: "/createcrumbs",
       element: <CreateCrumbs />,
-=======
+    },
+    {
       path: "/map",
       element: <Map />,
->>>>>>> c030c6f77baab759198190e3ac15c125f4394640
     }
   ]);
 };
