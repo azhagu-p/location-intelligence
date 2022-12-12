@@ -1,5 +1,8 @@
-*{margin: 0;}
-.back{
+* {
+  margin: 0;
+}
+
+.back {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,38 +16,45 @@
   transform: scale(1.1);
   overflow: hidden;
 }
-.main{
+
+.main {
   display: flex;
   justify-content: center;
 }
-.main .box{
+
+.main .box {
   width: 400px;
   background: #000;
   color: #fff;
   padding: 10px;
 }
-.main .box .box-title{
+
+.main .box .box-title {
   padding: 20px;
 }
-.main .box .box-msg{
+
+.main .box .box-msg {
   padding: 10px;
   color: #666;
 }
-.main .box .btn-row{
+
+.main .box .btn-row {
   margin: 20px 0 0 0;
 }
-.main .box .btn-row .btn{
+
+.main .box .btn-row .btn {
   display: inline-block;
   width: 50%;
   border-radius: 0;
   padding: 15px 0;
 }
-.main .box .btn-row .btn:nth-child(1){
+
+.main .box .btn-row .btn:nth-child(1) {
   background: #000;
 }
 
-/* .MuiBackdrop-root{
+.MuiBackdrop-root{
   filter: blur(10px);
   -webkit-filter: blur(10px);
   transform: scale(1.5);
-} */
+}
