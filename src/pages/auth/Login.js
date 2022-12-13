@@ -41,7 +41,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://192.168.1.91:8000/api/auth/login", {
+      .post("http://192.168.0.116:8000/api/auth/login", {
         email: values.email,
         password: values.pass,
       })
