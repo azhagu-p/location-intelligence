@@ -1,0 +1,71 @@
+*{margin: 0;}
+.text_left{text-align: left;}
+/* .pxy_20{padding-left: 20px;padding-right: 20px;}
+.ptb_20{padding-top: 20px;padding-bottom: 20px;} */
+.m_50{margin: 50px;}
+.float_left{text-align: left;display: flex;justify-content: left;align-items: left;}
+.back{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(256,256,256,.1); */
+  background-image: url('../../assets/bg.png');
+  z-index: -1;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  transform: scale(1.1);
+  overflow: hidden;
+}
+.main{
+  /* display: flex;
+  justify-content: flex-end; */
+}
+.main .box{
+  width: 500px;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.main .box .user_image{
+  width: 150px;
+  border-radius: 50%;
+}
+.main .box .user_name{
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 13px;
+  background: #00f;
+  transform: translate(0,-10px);
+}
+.main .box .user_text_white{}
+.table_row_column{width: 49%;display: inline-block;background: #f00;}
+.table_row_column img{width: 30px;float: left;}
+.table_row_column .box-msg{padding: 10px;}
+.main .box .icon-tik{
+  padding: 20px;
+  border: 5px solid #080;
+  border-radius: 50%;
+  font-size: 50px;
+}
+.main .box .box-msg{
+  padding: 10px;
+  color: #666;
+}
+.main .box .btn-row{
+  margin: 20px 0 0 0;
+}
+.main .box .btn-row .btn{
+  display: inline-block;
+  width: 50%;
+  border-radius: 0;
+  padding: 15px 0;
+}
+.main .box .btn-row .btn:nth-child(1){
+  background: #000;
+}
