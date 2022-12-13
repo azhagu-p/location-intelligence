@@ -1,7 +1,9 @@
 *{margin: 0;}
 .text_left{text-align: left;}
-.pxy_20{padding-left: 20px;padding-right: 20px;}
-.ptb_20{padding-top: 20px;padding-bottom: 20px;}
+/* .pxy_20{padding-left: 20px;padding-right: 20px;}
+.ptb_20{padding-top: 20px;padding-bottom: 20px;} */
+.m_50{margin: 50px;}
+.float_left{text-align: left;display: flex;justify-content: left;align-items: left;}
 .back{
   position: fixed;
   top: 0;
@@ -42,6 +44,9 @@
   transform: translate(0,-10px);
 }
 .main .box .user_text_white{}
+.table_row_column{width: 49%;display: inline-block;background: #f00;}
+.table_row_column img{width: 30px;float: left;}
+.table_row_column .box-msg{padding: 10px;}
 .main .box .icon-tik{
   padding: 20px;
   border: 5px solid #080;

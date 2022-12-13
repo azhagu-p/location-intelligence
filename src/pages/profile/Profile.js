@@ -10,6 +10,7 @@ import { Component } from "react";
 
 import DoneIcon from '@mui/icons-material/Done';
 import user from '../../assets/user.jpg'
+import email from '../../assets/email.png'
 
 export default class MultipleItems extends Component {
   render() {
@@ -23,8 +24,18 @@ export default class MultipleItems extends Component {
                 <img src={user} alt="" class="user_image" />
                 <p className='user_name'>Santhosh</p>
                 <p className='user_text user_text_white'>Personal Information</p>
-                <div className='pxy_20 ptb_20'>
+                <div className='pxy_20 ptb_20 m_50'>
                   <h4 className='user_text user_text_white text_left'>Personal Information</h4>
+                  <div className='table_row'>
+                  <div className='table_row_column float_left'>
+                      <img src={email} alt="" class="" />
+                      <p className='box-msg'>Email</p>
+                    </div>
+                    <div className='table_row_column float_left'>
+                      <img src={email} alt="" class="" />
+                      <p className='box-msg'>Email</p>
+                    </div>
+                  </div>
                 </div>
                 <p className='box-msg'>Card has been deleted</p>
                 <div className='btn-row'>
