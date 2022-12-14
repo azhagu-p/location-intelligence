@@ -27,14 +27,14 @@ export default class MultipleItems extends Component {
           <div className='back'></div>
           <div className='main'>
               <div className='box'>
-                <img src={user} alt="" class="user_image" />
+                <img src={user} alt="#" class="user_image" />
                 <p className='user_name'>Santhosh</p>
                 <p className='user_text user_text_white'>Personal Information</p>
                 <div className='pxy_20 ptb_20 m_50'>
                   <h4 className='user_text user_text_white text_left'>Personal Information</h4>
                   <div className='table_row mt_5'>
                     <div className='table_row_column float_left'>
-                      <img src={email} alt="" class="" />
+                      <img src={email} alt="#" class="" />
                       <p className='table_image_text'>Email</p>
                     </div>
                     <div className='table_row_column float_left'>
@@ -43,7 +43,7 @@ export default class MultipleItems extends Component {
                   </div>
                   <div className='table_row mt_5'>
                     <div className='table_row_column float_left'>
-                      <img src={company} alt="" class="" />
+                      <img src={company} alt="#" class="" />
                       <p className='table_image_text'>Company</p>
                     </div>
                     <div className='table_row_column float_left'>

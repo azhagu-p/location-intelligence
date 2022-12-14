@@ -4,10 +4,7 @@ import './Editprofile.css';
 import Button from '@mui/material/Button';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-
 import { Component } from "react";
-
 import DoneIcon from '@mui/icons-material/Done';
 import user from '../../assets/user.jpg'
 import email from '../../assets/email.png'
