@@ -10,6 +10,7 @@ import CrumbsDelete from "../pages/crumbsDelete/CrumbsDelete";
 import Modal from "../pages/modal/forgotpassword_popup"
 import CreateCrumbs from "../pages/modal/createcrumbs"
 import Profile from "../pages/profile/Profile"
+import Loading from "../pages/loading/Loading"
 
 const UseRout = () => {
   return useRoutes([
@@ -60,6 +61,10 @@ const UseRout = () => {
     {
       path: "/profile",
       element: <Profile />,
+    },
+    {
+      path: "/loading",
+      element: <Loading />,
     }
   ]);
 };

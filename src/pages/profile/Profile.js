@@ -30,7 +30,7 @@ export default class MultipleItems extends Component {
                 <img src={user} alt="" class="user_image" />
                 <p className='user_name'>Santhosh</p>
                 <p className='user_text user_text_white'>Personal Information</p>
-                <div className='pxy_20 ptb_20 m_50'>
+                <div className='pxyy_20 ptb_10 m_50'>
                   <h4 className='user_text user_text_white text_left'>Personal Information</h4>
                   <div className='table_row mt_5'>
                     <div className='table_row_column float_left'>
@@ -60,9 +60,11 @@ export default class MultipleItems extends Component {
                 </div>
                 <div className='btn-rows'>
                 <Button variant="contained"className="btn mt_20">Edit Profile</Button>
-                <h4>Have questions?</h4>
-                <p className='box-msg'>Please contact us for any inquiry or feedback about our platform and our team will promptly respond.</p>
-                <Button variant="contained"className="btn">Edit Profile</Button>
+                <div className='m_50'>
+                  <h4 className='float_left ml_10'>Have questions?</h4>
+                  <p className='box-msg'>Please contact us for any inquiry or feedback about our platform and our team will promptly respond.</p>
+                </div>
+                <Button variant="contained"color="warning"className="btn">Edit Profile</Button>
                 </div>
               </div>
           </div>
