@@ -7,10 +7,13 @@ import React from "react";
 import SelectedCountry from "../pages/selectedCountry/SelectedCountry";
 import DeleteCrumbs from "../pages/deleteCrumbs/DeleteCrumbs";
 import CrumbsDelete from "../pages/crumbsDelete/CrumbsDelete";
+// import Map from "../pages/map/map";
 import Modal from "../pages/modal/forgotpassword_popup"
 import CreateCrumbs from "../pages/modal/createcrumbs"
 import Profile from "../pages/profile/Profile"
 import Loading from "../pages/loading/Loading"
+import Editprofile from "../pages/profile/Editprofile"
+
 
 const UseRout = () => {
   return useRoutes([
@@ -61,6 +64,10 @@ const UseRout = () => {
     {
       path: "/profile",
       element: <Profile />,
+    },
+    {
+      path: "/editprofile",
+      element: <Editprofile />,
     },
     {
       path: "/loading",
