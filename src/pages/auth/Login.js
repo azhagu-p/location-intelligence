@@ -5,7 +5,6 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { Button } from "@mui/material";
 import mail from "../../assets/svg/sms.svg";
 import lock from "../..//assets/svg/lock.svg";
-
 import Frame from "../../assets/svg/Frame.svg";
 import Container from "@mui/material/Container";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -128,44 +127,62 @@ const Login = () => {
                 }}
               />
             </Box>
-            <Box className="checkbox">
-              <FormControlLabel
-                label="Remember me"
-                control={<Checkbox value="" sx={{ color: "white" }} />}
-              />
-              {/* <Link href="/forgotpassword" ml={10}>
-                Forget Password
-              </Link> */}
-              <Button onClick={handleOpen}>Forgotpassword</Button>
-              <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <div className='login2'>
-                  <div className='body'>
-
-                    <div className='main'>
-                      <div className='box'>
-
-                        <h3 className='box-title'>Confirm</h3>
-                        <p className='box-msg'>Are you sure you want  to delete the card?</p>
-                        <p className='box-msg'>Upon deletion the card will be moved to ‘Deleted’ folder and
-                          will remain there until the end of billingcycle.</p>
-                        <div className='btn-row'>
-                          <Button onClick={handleClose} variant="contained" className="btn">Cancel</Button>
-                          <Button variant="contained" className="btn">Delete</Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </Modal>
+            <Box>
+            <FormControlLabel sx={{ color: "grey" }} control={<Checkbox defaultChecked color="primary" />} label="Remember  me" />
+              <Link
+                component="button"
+                variant="body2"
+                onClick={handleOpen}
+                underline="hover"
+                sx={{ marginLeft: "75px", color: "grey"}}>
+                Forgot Password?
+              </Link>
             </Box>
             <LoginButton type="submit">Sign in</LoginButton>
           </form>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Container maxWidth className="container">
+              <Box className="flex-container">
+                <Box className="form-container card-2">
+                  <Box>
+                    <h2 className="h1">Forgot Password</h2>
+                  </Box>
+                  <form onSubmit={handleSubmit}>
+                    <Box className="form">
+                      <TextField
+                        label="Enter your mail address"
+                        InputLabelProps={{ style: { fontSize: 25, color: "grey" } }}
+                        focused
+                        fullWidth
+                        sx={{ m: 3 }}
+                        type="email"
+                        variant="standard"
+                        InputProps={{
+                          style: { color: "white", marginTop: "35px" },
+                          startAdornment: (
+                            <InputAdornment position="start">
+                              <img src={mail} alt="mail" />
+                            </InputAdornment>
+                          ),
+                        }}
+                        onChange={(e) =>
+                          setValues({ ...values, email: e.target.value })
+                        }
+                      />
+                    </Box>
+                    <LoginButton onClick={handleClose} type="submit" sx={{ textTransform: "none" }}>
+                      Forgot Password
+                    </LoginButton>
+                  </form>
+                </Box>
+              </Box>
+            </Container>
+          </Modal>
         </Box>
       </Box>
     </Container>
