@@ -1,36 +1,52 @@
-import React from 'react';
+import * as React from 'react';
+import CircularProgress, {
+  CircularProgressProps,
+} from '@mui/material/CircularProgress';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import './Loading.css';
-// import Button from '@material-ui/core/Button';
-import Button from '@mui/material/Button';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-import { Component } from "react";
-import icon_i from '../../assets/icon_i.png'
+function CircularProgressWithLabel(
+  props: CircularProgressProps & { value: number },
+) {
+  return (
+    <div class="page">
+      <div class="back_layer"></div>
+      <Box sx={{ position: 'relative', display: 'inline-flex' }} className="box">
+        <CircularProgress variant="determinate" {...props} size='30vh'className="circle" sx={{ width : '100px'}} />
+        <Box
+          sx={{
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            position: 'absolute',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography
+            variant="caption" size="20vh"
+            component="div" className='text'
+          >{`${Math.round(props.value)}%`}</Typography>
+        </Box>
+      </Box>
+    </div>
+  );
+}
 
-export default class MultipleItems extends Component {
-  render() {
+export default function CircularStatic() {
+  const [progress, setProgress] = React.useState(10);
 
-    return (
-      <div className='login2'>
-        <div className='body'>
-          <div className='back'></div>
-          <div className='main'>
-            <div className='box'>
-              <img src={icon_i} alt="" />
-              <h3 className='box-title'>Confirm</h3>
-              <p className='box-msg'>Are you sure you want  to delete the card?</p>
-              <p className='box-msg'>Upon deletion the card will be moved to ‘Deleted’ folder and
-                will remain there until the end of billingcycle.</p>
-              <div className='btn-row'>
-                <Button variant="contained" className="btn">Cancel</Button>
-                <Button variant="contained" className="btn">Delete</Button>
-              </div>
-            </div>
-          </div>
-        </div>
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+    }, 800);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
-      </div>
-    );
-  }
+  return <CircularProgressWithLabel value={progress} />;
 }
