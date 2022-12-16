@@ -128,13 +128,13 @@ const Login = () => {
               />
             </Box>
             <Box>
-            <FormControlLabel sx={{ color: "grey" }} control={<Checkbox defaultChecked color="primary" />} label="Remember  me" />
+              <FormControlLabel sx={{ color: "grey" }} control={<Checkbox defaultChecked color="primary" />} label="Remember  me" />
               <Link
                 component="button"
                 variant="body2"
                 onClick={handleOpen}
                 underline="hover"
-                sx={{ marginLeft: "75px", color: "grey"}}>
+                sx={{ marginLeft: "75px", color: "grey" }}>
                 Forgot Password?
               </Link>
             </Box>
