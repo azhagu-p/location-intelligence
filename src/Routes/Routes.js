@@ -11,7 +11,9 @@ import CrumbsDelete from "../pages/crumbsDelete/CrumbsDelete";
 import Modal from "../pages/modal/forgotpassword_popup"
 import CreateCrumbs from "../pages/modal/createcrumbs"
 import Profile from "../pages/profile/Profile"
+import Loading from "../pages/loading/Loading"
 import Editprofile from "../pages/profile/Editprofile"
+
 
 const UseRout = () => {
   return useRoutes([
@@ -65,7 +67,11 @@ const UseRout = () => {
     },
     {
       path: "/editprofile",
-      element: <Editprofile/>,
+      element: <Editprofile />,
+    },
+    {
+      path: "/loading",
+      element: <Loading />,
     }
   ]);
 };
