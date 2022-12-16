@@ -22,55 +22,53 @@ export default class MultipleItems extends Component {
   render() {
 
     return (
-    <div className='login2'>
-      <div className='body'>
+      <div className='login2'>
+        <div className='body'>
           <div className='back'></div>
           <div className='main'>
-              <div className='box'>
-                <img src={user} alt="#" class="user_image" />
-                <p className='user_name'>Santhosh</p>
-                <p className='user_text user_text_white'>Personal Information</p>
-                <div className='pxyy_20 ptb_10 m_50'>
-                  <h4 className='user_text user_text_white text_left'>Personal Information</h4>
-                  <div className='table_row mt_5'>
-                    <div className='table_row_column float_left'>
-                      <img src={email} alt="#" class="" />
-                      <p className='table_image_text'>Email</p>
-                    </div>
-                    <div className='table_row_column float_left'>
-                      <p className='table_image_text_value'>santhosh.r@memob.com</p>
-                    </div>
+            <div className='box'>
+              <img src={user} alt="#" class="user_image" />
+              <p className='user_name'>Santhosh</p>
+              <p className='user_text user_text_white'>Personal Information</p>
+              <div className='pxy_20 ptb_20 m_50'>
+                <h4 className='user_text user_text_white text_left'>Personal Information</h4>
+                <div className='table_row mt_5'>
+                  <div className='table_row_column float_left'>
+                    <img src={email} alt="#" class="" />
+                    <p className='table_image_text'>Email</p>
                   </div>
-                  <div className='table_row mt_5'>
-                    <div className='table_row_column float_left'>
-                      <img src={company} alt="#" class="" />
-                      <p className='table_image_text'>Company</p>
-                    </div>
-                    <div className='table_row_column float_left'>
-                      <p className='table_image_text_value'>MEmob</p>
-                    </div>
+                  <div className='table_row_column float_left'>
+                    <p className='table_image_text_value'>santhosh.r@memob.com</p>
                   </div>
                 </div>
-                <div className='table_row flag_list_row'>
-                  <span className='flag_list'><img src={ksa} /><span className='flag_list_name'>KSA</span></span>
-                  <span className='flag_list'><img src={esp} /><span className='flag_list_name'>ESP</span></span>
-                  <span className='flag_list'><img src={uae} /><span className='flag_list_name'>UAE</span></span>
-                  <span className='flag_list'><img src={qatar} /><span className='flag_list_name'>QATAR</span></span>
-                  <span className='flag_list'><img src={usa} /><span className='flag_list_name'>USA</span></span>
-                </div>
-                <div className='btn-rows'>
-                <Button variant="contained"className="btn mt_20">Edit Profile</Button>
-                <div className='m_50'>
-                  <h4 className='float_left ml_10'>Have questions?</h4>
-                  <p className='box-msg'>Please contact us for any inquiry or feedback about our platform and our team will promptly respond.</p>
-                </div>
-                <Button variant="contained"color="warning"className="btn">Edit Profile</Button>
+                <div className='table_row mt_5'>
+                  <div className='table_row_column float_left'>
+                    <img src={company} alt="#" class="" />
+                    <p className='table_image_text'>Company</p>
+                  </div>
+                  <div className='table_row_column float_left'>
+                    <p className='table_image_text_value'>MEmob</p>
+                  </div>
                 </div>
               </div>
+              <div className='table_row flag_list_row'>
+                <span className='flag_list'><img src={ksa} /><span className='flag_list_name'>KSA</span></span>
+                <span className='flag_list'><img src={esp} /><span className='flag_list_name'>ESP</span></span>
+                <span className='flag_list'><img src={uae} /><span className='flag_list_name'>UAE</span></span>
+                <span className='flag_list'><img src={qatar} /><span className='flag_list_name'>QATAR</span></span>
+                <span className='flag_list'><img src={usa} /><span className='flag_list_name'>USA</span></span>
+              </div>
+              <div className='btn-rows'>
+                <Button variant="contained" className="btn mt_20">Edit Profile</Button>
+                <h4>Have questions?</h4>
+                <p className='box-msg'>Please contact us for any inquiry or feedback about our platform and our team will promptly respond.</p>
+                <Button variant="contained" className="btn">Edit Profile</Button>
+              </div>
+            </div>
           </div>
         </div>
-      
-    </div>
+
+      </div>
     );
   }
 }

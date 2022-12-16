@@ -15,6 +15,7 @@ import Uicon from '../../assets/user.png'
 import SMS from '../../assets/sms.png'
 import Officeicon from '../../assets/building-4.png'
 import Lock from '../../assets/svg/lock.svg'
+import Link from "@mui/material/Link";
 
 export default class MultipleItems extends Component {
     render() {
@@ -90,12 +91,14 @@ export default class MultipleItems extends Component {
                                     ),
                                 }}
                             />
-
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
+
         );
     }
 }

@@ -4,8 +4,11 @@ import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Upload from '@mui/icons-material/ImageOutlined';
+import Gallery from '../../assets/gallery-add.png';
+import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
@@ -20,43 +23,57 @@ export default function FormDialog() {
 
   return (
     <div>
+      <img src={Gallery} alt="some example " />
       <Button variant="outlined" onClick={handleClickOpen}>
         create new crumb
       </Button>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Create A New Crumb</DialogTitle>
-        <DialogContent>
+      <Dialog open={open} onClose={handleClose} PaperProps={{ sx: { width: "30%", backgroundColor: "#010412", color: "white" } }}>
+        <DialogTitle textAlign="center">Create A New Crumb</DialogTitle>
+        <Divider sx={{ bgcolor: "grey" }} />
+        <DialogContent >
           <TextField
-            autoFocus
+            InputProps={{
+              style: { color: "white", borderBlockColor: "white" }
+            }}
+            placeholder="Crumbs Name ( e.g. Coffee Lovers - NYC )"
+            InputLabelProps={{ style: { color: "grey" } }}
+            focused
             margin="dense"
             id="name"
-            label="Crumbs Name ( e.g. Coffee Lovers - NYC )"
             type="text"
             fullWidth
             variant="standard"
+            sx={{ my: 2 }}
           />
           <TextField
-          id="standard-multiline-static"
-          label="Description"
-          multiline
-          rows={4}
-          variant="standard"
-          fullWidth
-        />
+            InputProps={{
+              style: { color: "white", borderBlockColor: "white" }
+            }}
+            placeholder="Description"
+            InputLabelProps={{ style: { color: "grey" } }}
+            focused
+            id="standard-multiline-static"
+            multiline
+            rows={3}
+            variant="standard"
+            fullWidth
+            sx={{ my: 2 }}
+          />
           <Button
-  variant="contained"
-  component="label"
->
-  Upload File
-  <input
-    type="file"
-    hidden
-  />
-</Button>
+            sx={{ my: 2, backgroundColor: "#0B0E24", height: "100px", textTransform: "none", color: "grey" }}
+            variant="outlined"
+            fullWidth
+            startIcon={<Upload />}
+          >
+            Upload an image (Max 2mb)
+            <input hidden type="file" />
+          </Button>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Create</Button>
+          <Stack direction="row">
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button onClick={handleClose}>Create</Button>
+          </Stack>
         </DialogActions>
       </Dialog>
     </div>
