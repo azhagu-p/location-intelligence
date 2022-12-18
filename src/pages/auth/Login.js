@@ -138,7 +138,7 @@ const Login = () => {
                 Forgot Password?
               </Link>
             </Box>
-            <LoginButton type="submit">Sign in</LoginButton>
+            <LoginButton variant="contained"  type="submit">Sign in</LoginButton>
           </form>
           <Modal
             open={open}
