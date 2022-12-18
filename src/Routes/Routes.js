@@ -13,7 +13,8 @@ import CreateCrumbs from "../pages/modal/createcrumbs"
 import Profile from "../pages/profile/Profile"
 import Loading from "../pages/loading/Loading"
 import Editprofile from "../pages/profile/Editprofile"
-import Deletecrumb from "./modal/deletecrumb"
+import DeleteCrumb from "../pages/modal/Deletecrumb"
+import Crumbdeleted from "../pages/modal/Crumbdeleted"
 
 const UseRout = () => {
   return useRoutes([
@@ -75,7 +76,11 @@ const UseRout = () => {
     },
     {
       path: "/deletecrumb",
-      element: <Deletecrumb />,
+      element: <DeleteCrumb />,
+    },
+    {
+      path: "/crumbdeleted",
+      element: <Crumbdeleted />,
     },
   ]);
 };
