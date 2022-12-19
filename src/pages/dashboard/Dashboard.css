@@ -1,63 +1,42 @@
-* {
-  margin: 0;
-}
-
-.back {
+*{margin: 0;}
+.back_layer{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(256,256,256,.1); */
   background-image: url('../../assets/bg.png');
-  z-index: -1;
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
+  z-index: -10;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
   transform: scale(1.1);
   overflow: hidden;
 }
-
-.main {
-  display: flex;
-  justify-content: center;
+.body{
 }
-
-.main .box {
-  width: 400px;
-  background: #000;
-  color: #fff;
-  padding: 10px;
-}
-
-.main .box .icon-tik {
-  padding: 20px;
-  border: 5px solid #080;
-  border-radius: 50%;
-  font-size: 50px;
-}
-
-.main .box .box-msg {
-  padding: 10px;
-  color: #666;
-}
-
-.main .box .btn-row {
-  margin: 20px 0 0 0;
-}
-
-.main .box .btn-row .btn {
-  display: inline-block;
-  width: 50%;
-  border-radius: 0;
-  padding: 15px 0;
-}
-
-.main .box .btn-row .btn:nth-child(1) {
+.body .left_bar{
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
   background: #000;
 }
-/*------------------------------------------------*/
-.List{
-  background: #aaa;
-  width: 100px;
-  height: 100vh;
+.ListItem{
+  /* background: #f00; */
+  width: 70px;
+}
+.List2{
+  position: fixed;
+  bottom: 0;
+}
+.Avatar{
+  background: #444;
+}
+.ImageIcon{
+  color: #aaa;
+}
+.btn_plus{
+  padding: 10px;
+}
+.user_image{
+  width: 50px;
 }
