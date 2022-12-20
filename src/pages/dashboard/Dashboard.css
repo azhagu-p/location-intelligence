@@ -21,7 +21,7 @@
   background: #000;
 }
 .ListItem{
-  /* background: #f00; */
+  background: #f00;
   width: 70px;
 }
 .List2{
@@ -35,7 +35,7 @@
   color: #aaa;
 }
 .btn_plus{
-  padding: 10px;
+  padding: 20px;
 }
 .user_image{
   width: 50px;

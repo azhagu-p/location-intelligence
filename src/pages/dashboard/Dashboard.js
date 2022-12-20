@@ -79,7 +79,7 @@ export default function FormDialog() {
                 <ListItem className="ListItem">
                   <ListItemAvatar  className="ListItemAvatar">
                     <Avatar  className="Avatar">
-                      <img src={user} alt="" class="user_image" />
+                      <img src={user} alt="" className="user_image" />
                     </Avatar>
                   </ListItemAvatar>
                 </ListItem>
