@@ -4,11 +4,7 @@ import './Profile.css';
 import Button from '@mui/material/Button';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-
 import { Component } from "react";
-
-import DoneIcon from '@mui/icons-material/Done';
 import user from '../../assets/user.jpg'
 import email from '../../assets/email.png'
 import company from '../../assets/company.png'
@@ -52,11 +48,11 @@ export default class MultipleItems extends Component {
                 </div>
               </div>
               <div className='table_row flag_list_row'>
-                <span className='flag_list'><img src={ksa} /><span className='flag_list_name'>KSA</span></span>
-                <span className='flag_list'><img src={esp} /><span className='flag_list_name'>ESP</span></span>
-                <span className='flag_list'><img src={uae} /><span className='flag_list_name'>UAE</span></span>
-                <span className='flag_list'><img src={qatar} /><span className='flag_list_name'>QATAR</span></span>
-                <span className='flag_list'><img src={usa} /><span className='flag_list_name'>USA</span></span>
+                <span className='flag_list'><img src={ksa} alt="#"/><span className='flag_list_name'>KSA</span></span>
+                <span className='flag_list'><img src={esp} alt="#"/><span className='flag_list_name'>ESP</span></span>
+                <span className='flag_list'><img src={uae} alt="#"/><span className='flag_list_name'>UAE</span></span>
+                <span className='flag_list'><img src={qatar}alt="#" /><span className='flag_list_name'>QATAR</span></span>
+                <span className='flag_list'><img src={usa} alt="#" /><span className='flag_list_name'>USA</span></span>
               </div>
               <div className='btn-rows'>
                 <Button variant="contained" className="btn mt_20">Edit Profile</Button>

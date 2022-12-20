@@ -2,10 +2,8 @@ import React from "react";
 import "./SelectedCountry.css";
 import Button from "@mui/material/Button";
 import "slick-carousel/slick/slick.css";
-
 import "slick-carousel/slick/slick-theme.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
 import { Component } from "react";
 import Slider from "react-slick";
 import uae from "../../assets/c_uae.png";
