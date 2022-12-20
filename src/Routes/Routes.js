@@ -13,8 +13,13 @@ import CreateCrumbs from "../pages/modal/createcrumbs"
 import Profile from "../pages/profile/Profile"
 import Loading from "../pages/loading/Loading"
 import Editprofile from "../pages/profile/Editprofile"
-import DeleteCrumb from "../pages/modal/Deletecrumb"
-import Crumbdeleted from "../pages/modal/Crumbdeleted"
+import DeleteCrumb from "../pages/modal/deletecrumb"
+import Crumbdeleted from "../pages/modal/crumbdeleted"
+import Saveaudienceclicked from "../pages/modal/saveaudienceclicked"
+import Uploaderrors from "../pages/modal/uploaderrors"
+import Uploadprogress from "../pages/modal/uploadprogress"
+import Uploadsuccess from "../pages/modal/uploadsuccess"
+import Searchaudience from "../pages/modal/searchaudience"
 
 const UseRout = () => {
   return useRoutes([
@@ -81,6 +86,26 @@ const UseRout = () => {
     {
       path: "/crumbdeleted",
       element: <Crumbdeleted />,
+    },
+    {
+      path: "/saveaudienceclicked",
+      element: <Saveaudienceclicked />,
+    },
+    {
+      path: "/uploaderrors",
+      element: <Uploaderrors />,
+    },
+    {
+      path: "/uploadprogress",
+      element: <Uploadprogress />,
+    },
+    {
+      path: "/uploadsuccess",
+      element: <Uploadsuccess />,
+    },
+    {
+      path: "/searchaudience",
+      element: <Searchaudience />,
     }
   ]);
 };

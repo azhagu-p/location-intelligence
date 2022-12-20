@@ -23,19 +23,18 @@ export default function FormDialog() {
 
   return (
     <div>
-      <img src={Gallery} alt="some example " />
       <Button variant="outlined" onClick={handleClickOpen}>
-        create new crumb
+        save your Audience
       </Button>
       <Dialog open={open} onClose={handleClose} PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}>
-        <DialogTitle textAlign="center">Create A New Crumb</DialogTitle>
+        <DialogTitle textAlign="center">Save Your Audience</DialogTitle>
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogContent sx={{ mx: 4 }}>
           <TextField
             InputProps={{
               style: { color: "white" }
             }}
-            placeholder="Crumbs Name ( e.g. Coffee Lovers - NYC )"
+            placeholder="Audience Name"
             InputLabelProps={{
               style: { color: "#6F7288" }
             }}
@@ -69,15 +68,15 @@ export default function FormDialog() {
             startIcon={<Upload />}
           >
             Upload an image (Max 2mb)
-            <input hidden type="file" />
+
           </Button>
-         
+          <input hidden type="file" />
         </DialogContent>
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogActions sx={{ padding: "0px" }}>
           <ButtonGroup fullWidth size='large' aria-label="outlined primary button group">
             <Button variant='flat' onClick={handleClose} style={{ textTransform: "none", borderRadius: "0px" }}>Cancel</Button>
-            <Button variant='contained' onClick={handleClose} sx={{ textTransform: "none", borderRadius: "0px" }}>Create</Button>
+            <Button variant='contained' onClick={handleClose} sx={{ textTransform: "none", borderRadius: "0px" }}>Save to my account</Button>
           </ButtonGroup>
         </DialogActions>
       </Dialog>
