@@ -19,6 +19,7 @@ import Modal from '@mui/material/Modal';
 import '../crumbsDelete/CrumbsDelete.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { login_api } from "../../api_endpoints/common";
 
 const LoginButton = styled(Button)(({ theme }) => ({
   marginTop: 10,
@@ -39,8 +40,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("http://192.168.0.116:8000/api/auth/login", {
+    console.log(login_api);
+    axios.post(login_api, {
         email: values.email,
         password: values.pass,
       })
