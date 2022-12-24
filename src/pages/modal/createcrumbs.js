@@ -23,11 +23,16 @@ export default function FormDialog() {
 
   return (
     <div>
-      <img src={Gallery} alt="some example " />
       <Button variant="outlined" onClick={handleClickOpen}>
-        create new crumb
+        create crumb
       </Button>
-      <Dialog open={open} onClose={handleClose} PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}>
+
+      <Dialog open={open} onClose={handleClose}
+        PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}
+        sx={{
+          backdropFilter: "blur(2px)",
+        }}
+      >
         <DialogTitle textAlign="center">Create A New Crumb</DialogTitle>
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogContent sx={{ mx: 4 }}>
@@ -71,7 +76,7 @@ export default function FormDialog() {
             Upload an image (Max 2mb)
             <input hidden type="file" />
           </Button>
-         
+
         </DialogContent>
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogActions sx={{ padding: "0px" }}>

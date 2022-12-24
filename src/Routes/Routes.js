@@ -20,6 +20,10 @@ import Uploaderrors from "../pages/modal/uploaderrors"
 import Uploadprogress from "../pages/modal/uploadprogress"
 import Uploadsuccess from "../pages/modal/uploadsuccess"
 import Searchaudience from "../pages/modal/searchaudience"
+import Drawer from "../pages/drawer/profile"
+import Slide from "../pages/drawer/slide"
+import Nav from "../components/Nav"
+import Aside from "../components/aside"
 
 const UseRout = () => {
   return useRoutes([
@@ -106,6 +110,22 @@ const UseRout = () => {
     {
       path: "/searchaudience",
       element: <Searchaudience />,
+    },
+    {
+      path: "/drawer",
+      element: <Drawer />,
+    },
+    {
+      path: "/slide",
+      element: <Slide />,
+    },
+    {
+      path: "/nav",
+      element: <Nav />
+    },
+    {
+      path: "/aside",
+      element: <Aside />
     }
   ]);
 };

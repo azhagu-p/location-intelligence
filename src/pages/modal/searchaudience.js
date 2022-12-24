@@ -1,4 +1,5 @@
-import * as React from 'react';
+// import * as React from 'react';
+import React, { useState } from "react";
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -58,12 +59,19 @@ export default function LabTabs() {
 
     const labelId = `checkbox-list-label-${value}`;
 
+    const [clicked, setClicked] = useState(true);
+
     return (
         <div>
             <Button variant="outlined" onClick={handleClickOpen}>
                 search audience
             </Button>
-            <Dialog open={open} onClose={handleClose} PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}>
+            <Dialog open={open} onClose={handleClose}
+                PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}
+                sx={{
+                    backdropFilter: "blur(2px)",
+                }}
+            >
                 <TabContext value={value} >
                     <Box sx={{ borderColor: 'divider' }}>
                         <TabList variant='fullWidth' onChange={handleChange} aria-label="lab API tabs example">
@@ -168,19 +176,19 @@ export default function LabTabs() {
 
                             <List sx={{ display: 'flex', flexDirection: 'row', padding: '0px' }}>
                                 <ListItem disablePadding>
-                                    <ListItemButton> <WhereToVoteIcon sx={{ color: "#3955BF" }} /></ListItemButton>
+                                    <ListItemButton onClick={() => setClicked(!clicked)} sx={{ display: 'flex', justifyContent: 'center' }}> {clicked ? <WhereToVoteIcon sx={{ color: "#1FB9FC" }} /> : <LocationOnIcon sx={{ color: "#1FB9FC" }} />} </ListItemButton>
                                 </ListItem>
                                 <ListItem disablePadding>
-                                    <ListItemButton> <LocationOnIcon sx={{ color: "#FC6B21" }} /></ListItemButton>
+                                    <ListItemButton onClick={() => setClicked(!clicked)} sx={{ display: 'flex', justifyContent: 'center' }}> {clicked ? <WhereToVoteIcon sx={{ color: "#FC6B21" }} /> : <LocationOnIcon sx={{ color: "#FC6B21" }} />} </ListItemButton>
                                 </ListItem>
                                 <ListItem disablePadding>
-                                    <ListItemButton> <LocationOnIcon sx={{ color: "#39BF8F" }} /></ListItemButton>
+                                    <ListItemButton onClick={() => setClicked(!clicked)} sx={{ display: 'flex', justifyContent: 'center' }}> {clicked ? <WhereToVoteIcon sx={{ color: "#39BF8F" }} /> : <LocationOnIcon sx={{ color: "#39BF8F" }} />} </ListItemButton>
                                 </ListItem>
                                 <ListItem disablePadding>
-                                    <ListItemButton> <LocationOnIcon sx={{ color: "#FF0099" }} /></ListItemButton>
+                                    <ListItemButton onClick={() => setClicked(!clicked)} sx={{ display: 'flex', justifyContent: 'center' }}> {clicked ? <WhereToVoteIcon sx={{ color: "#FF0099" }} /> : <LocationOnIcon sx={{ color: "#FF0099" }} />} </ListItemButton>
                                 </ListItem>
                                 <ListItem disablePadding>
-                                    <ListItemButton> <LocationOnIcon sx={{ color: "#1FB9FC" }} /></ListItemButton>
+                                    <ListItemButton onClick={() => setClicked(!clicked)} sx={{ display: 'flex', justifyContent: 'center' }}> {clicked ? <WhereToVoteIcon sx={{ color: "#1FB9FC" }} /> : <LocationOnIcon sx={{ color: "#1FB9FC" }} />}</ListItemButton>
                                 </ListItem>
                             </List>
 

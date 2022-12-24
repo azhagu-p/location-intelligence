@@ -18,6 +18,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Upload from '@mui/icons-material/ImageOutlined';
 import Divider from '@mui/material/Divider';
+import Searchicon from '../../assets/Group 65.png'
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
@@ -30,55 +31,59 @@ export default function FormDialog() {
     setOpen(false);
   };
 
-  
+  return (
+    <div className='body'>
+      <div className='back_layer'></div>
+      <div className='left_bar'>
+        <List sx={{ width: '100%' }} className="List">
+          <ListItem className="ListItem">
+            <ListItemAvatar className="ListItemAvatar">
+              <Avatar className="Avatar">
+                <ImageIcon className="ImageIcon" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className="ListItem">
+            <ListItemAvatar className="ListItemAvatar">
+              <Avatar className="Avatar">
+                <ImageIcon className="ImageIcon" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className="ListItem">
+            <ListItemAvatar className="ListItemAvatar">
+              <Avatar className="Avatar">
+                <ImageIcon className="ImageIcon" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </List>
+        <br />
+        <List sx={{ width: '100%', marginTop: '300px' }} className="List List2">
+          <ListItem className="ListItem">
+            <ListItemAvatar className="ListItemAvatar">
+              <Avatar className="Avatar">
+                <Button variant="contained" className='btn btn_plus' onClick={handleClickOpen} >+</Button>
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className="ListItem">
+            <ListItemAvatar className="ListItemAvatar">
+              <Avatar className="Avatar">
+                <img src={user} alt="" className="user_image" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </List>
+      </div>
+      {/* --------------------------------------------Modal---------------------- */}
 
-    return (
-        <div className='body'>
-          <div className='back_layer'></div>
-            <div className='left_bar'>
-            <List sx={{ width: '100%'}} className="List">
-                <ListItem className="ListItem">
-                  <ListItemAvatar  className="ListItemAvatar">
-                    <Avatar  className="Avatar">
-                      <ImageIcon   className="ImageIcon"/>
-                    </Avatar>
-                  </ListItemAvatar>
-                </ListItem>
-                <ListItem className="ListItem">
-                  <ListItemAvatar  className="ListItemAvatar">
-                    <Avatar  className="Avatar">
-                      <ImageIcon   className="ImageIcon"/>
-                    </Avatar>
-                  </ListItemAvatar>
-                </ListItem>
-                <ListItem className="ListItem">
-                  <ListItemAvatar  className="ListItemAvatar">
-                    <Avatar  className="Avatar">
-                      <ImageIcon   className="ImageIcon"/>
-                    </Avatar>
-                  </ListItemAvatar>
-                </ListItem>
-              </List>
-              <List sx={{ width: '100%'}} className="List List2">
-                <ListItem className="ListItem">
-                  <ListItemAvatar  className="ListItemAvatar">
-                    <Avatar  className="Avatar">
-                      <Button variant="contained" className='btn btn_plus' onClick={handleClickOpen} >+</Button>
-                    </Avatar>
-                  </ListItemAvatar>
-                </ListItem>
-                <ListItem className="ListItem">
-                  <ListItemAvatar  className="ListItemAvatar">
-                    <Avatar  className="Avatar">
-                      <img src={user} alt="" className="user_image" />
-                    </Avatar>
-                  </ListItemAvatar>
-                </ListItem>
-              </List>
-            </div>
-            {/* --------------------------------------------Modal---------------------- */}
-            
-            <Dialog open={open} onClose={handleClose} PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}>
+      <Dialog open={open} onClose={handleClose}
+        PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}
+        sx={{
+          backdropFilter: "blur(2px)",
+        }}
+      >
         <DialogTitle textAlign="center">Create A New Crumb</DialogTitle>
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogContent sx={{ mx: 4 }}>
@@ -132,6 +137,6 @@ export default function FormDialog() {
           </ButtonGroup>
         </DialogActions>
       </Dialog>
-      </div>
-    );
-  }
+    </div>
+  );
+}

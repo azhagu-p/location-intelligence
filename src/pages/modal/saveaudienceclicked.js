@@ -26,7 +26,12 @@ export default function FormDialog() {
       <Button variant="outlined" onClick={handleClickOpen}>
         save your Audience
       </Button>
-      <Dialog open={open} onClose={handleClose} PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}>
+      <Dialog open={open} onClose={handleClose} 
+      PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px" } }}
+      sx={{
+        backdropFilter: "blur(2px)",
+      }}
+      >
         <DialogTitle textAlign="center">Save Your Audience</DialogTitle>
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogContent sx={{ mx: 4 }}>

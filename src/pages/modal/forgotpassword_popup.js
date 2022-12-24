@@ -18,6 +18,9 @@ export default function BasicModal() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        sx={{
+          backdropFilter: "blur(2px)",
+        }}
       >
         <div className='login2'>
           <div className='body'>

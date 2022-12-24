@@ -31,6 +31,9 @@ export default function AlertDialog() {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
                 PaperProps={{ sx: { width: "35%", backgroundColor: "#010412", color: "#FFFFFF", borderRadius: "0px", pt: 6 } }}
+                sx={{
+                    backdropFilter: "blur(2px)",
+                }}
             >
                 <DialogTitle id="alert-dialog-title" textAlign="center" fontWeight={"bold"} fontSize={"25px"}>
                     {"Upload 100% Successful"}
