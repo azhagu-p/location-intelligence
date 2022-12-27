@@ -38,7 +38,7 @@ export default function AlertDialog() {
                 <DialogTitle id="alert-dialog-title" textAlign="center" fontWeight={"bold"} fontSize={"25px"}>
                     {"Upload 100% Successful"}
                 </DialogTitle>
-                <img src={Logo} />
+                <img src={Logo} alt='logo' />
                 <DialogTitle id="alert-dialog-title" textAlign="center" fontWeight={"bold"} color={"#3955BF"}>
                     {"Ingested 1 of 1: Failed: 0"}
                 </DialogTitle>

@@ -38,7 +38,7 @@ export default function AlertDialog() {
         <DialogTitle id="alert-dialog-title" textAlign="center" fontWeight={"bold"} fontSize={"25px"}>
           {"Deleted!"}
         </DialogTitle>
-        <img src={Logo} sx={{ py: 8 }} />
+        <img src={Logo} alt='logo' sx={{ py: 8 }} />
         <DialogContent>
           <DialogContentText id="alert-dialog-description" textAlign="center" color={"#6F7288"}>
             Card has been deleted

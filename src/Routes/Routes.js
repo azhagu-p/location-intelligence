@@ -24,6 +24,8 @@ import Drawer from "../pages/drawer/profile"
 import Slide from "../pages/drawer/slide"
 import Nav from "../components/Nav"
 import Aside from "../components/aside"
+import Drawer2 from "../pages/drawer/editprofile"
+import Snackbar from "../pages/auth/snackbar"
 
 const UseRout = () => {
   return useRoutes([
@@ -126,6 +128,14 @@ const UseRout = () => {
     {
       path: "/aside",
       element: <Aside />
+    },
+    {
+      path: "/drawer2",
+      element: <Drawer2 />
+    },
+    {
+      path: "/snackbar",
+      element: <Snackbar />
     }
   ]);
 };

@@ -18,7 +18,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Upload from '@mui/icons-material/ImageOutlined';
 import Divider from '@mui/material/Divider';
-import Searchicon from '../../assets/Group 65.png'
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);

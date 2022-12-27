@@ -42,9 +42,9 @@ const Login = () => {
     e.preventDefault();
     console.log(login_api);
     axios.post(login_api, {
-        email: values.email,
-        password: values.pass,
-      })
+      email: values.email,
+      password: values.pass,
+    })
       .then((res) => {
         localStorage.setItem("token", res.data.access);
         navigate("/country");
@@ -74,6 +74,7 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <Box className="form">
               <TextField
+                required
                 focused
                 fullWidth
                 sx={{ m: 3 }}
@@ -94,12 +95,12 @@ const Login = () => {
               />
 
               <TextField
+                required
                 focused
                 fullWidth
                 sx={{ m: 3 }}
                 type={values.showPass ? "text" : "password"}
                 variant="standard"
-                required
                 placeholder="Password"
                 onChange={(e) => setValues({ ...values, pass: e.target.value })}
                 InputProps={{
@@ -139,7 +140,7 @@ const Login = () => {
                 Forgot Password?
               </Link>
             </Box>
-            <LoginButton variant="contained"  type="submit">Sign in</LoginButton>
+            <LoginButton variant="contained" type="submit">Sign in</LoginButton>
           </form>
           <Modal
             open={open}

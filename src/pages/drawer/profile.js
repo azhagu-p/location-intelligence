@@ -3,33 +3,19 @@ import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import Avatar from '@mui/material/Avatar';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import ImgAvatar from '../../assets/Ellipse 313.png'
 import { AccountCircleRounded } from '@mui/icons-material';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
-import { InputLabel } from '@mui/material';
-import { color } from '@mui/system';
-import FormLabel from '@mui/material/FormLabel';
 import mail from "../../assets/svg/sms.svg";
 import InputAdornment from "@mui/material/InputAdornment";
 import Compicon from "../../assets/building-4.png"
-import esp from "../../assets/c_esp.png"
 import Stack from '@mui/material/Stack';
+import FlagCircleIcon from '@mui/icons-material/FlagCircle';
 
 export default function SwipeableTemporaryDrawer() {
     const [state, setState] = React.useState({
@@ -52,8 +38,6 @@ export default function SwipeableTemporaryDrawer() {
     };
 
     const list = (anchor) => (
-
-
         <Box
             sx={{
                 my: 8,
@@ -69,8 +53,8 @@ export default function SwipeableTemporaryDrawer() {
                 <AccountCircleRounded />
             </Avatar>
 
-            <Chip label="Enterprise" variant="contained" color='primary' />
-            <br />
+            <Chip label="Enterprise" variant="contained" color='primary' spacing={10} />
+
             <Chip label="Personal Inforamtion" component="h1" variant="contained"
                 sx={{ color: "#FFFFFF", backgroundColor: "#090C19" }}
             />
@@ -88,7 +72,7 @@ export default function SwipeableTemporaryDrawer() {
                 }}
             >
                 <Grid container >
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={6} >
                         <TextField
                             id="email"
                             name="lastName"
@@ -108,7 +92,7 @@ export default function SwipeableTemporaryDrawer() {
                             }
                         />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={6} >
                         <TextField
                             id="email"
                             name="lastName"
@@ -123,7 +107,7 @@ export default function SwipeableTemporaryDrawer() {
                             }
                         />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={6}>
                         <TextField
                             id="company"
                             name="lastName"
@@ -143,7 +127,7 @@ export default function SwipeableTemporaryDrawer() {
                             }
                         />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={6} >
                         <TextField
                             required
                             id="company"
@@ -160,28 +144,52 @@ export default function SwipeableTemporaryDrawer() {
                         />
                     </Grid>
                     <Stack direction="row">
-                        <List sx={{ display: 'flex', flexDirection: 'row', padding: '0px' }}>
+                        <List sx={{ display: 'flex', flexDirection: 'row' }}>
                             <ListItem disablePadding>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                <Avatar>
+                                    <FlagCircleIcon />
+                                </Avatar>
+                                <ListItemText sx={{ padding: "10px", color: "#6F7288" }}>KSA</ListItemText>
                             </ListItem>
                             <ListItem disablePadding>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                <Avatar>
+                                    <FlagCircleIcon />
+                                </Avatar>
+                                <ListItemText sx={{ padding: "10px", color: "#6F7288" }}>ESP</ListItemText>
                             </ListItem>
                             <ListItem disablePadding>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                <Avatar>
+                                    <FlagCircleIcon />
+                                </Avatar>
+                                <ListItemText sx={{ padding: "10px", color: "#6F7288" }}>QATAR</ListItemText>
                             </ListItem>
                             <ListItem disablePadding>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                            </ListItem>
-                            <ListItem disablePadding>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                <Avatar>
+                                    <FlagCircleIcon />
+                                </Avatar>
+                                <ListItemText sx={{ padding: "10px", color: "#6F7288" }}>UAE</ListItemText>
                             </ListItem>
                         </List>
                     </Stack>
+                    <Grid
+                        item
+                        container
+                        alignItems="center"
+                        justifyContent="center"
+                        margin={'50px'}
+                    >
+                        <Button variant='contained' sx={{ textTransform: "none" }} onClick={toggleDrawer(anchor, false)}>Edit Profile</Button>
+                        <Typography variant="h5" color={'#FFFFFF'} >
+                            Have questions?
+                            <Typography variant="body2" color={'#FFFFFF'} >
+                                Please contact us for any inquiry or feedback about our platform and our team will promptly respond.
+                            </Typography>
+                        </Typography>
+                        <Button variant='contained' color='warning' sx={{ textTransform: "none" }}>Contact us</Button>
+                    </Grid>
                 </Grid>
             </Box>
         </Box>
-
     );
 
     return (

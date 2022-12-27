@@ -35,7 +35,7 @@ export default function AlertDialog() {
           backdropFilter: "blur(2px)",
         }}
       >
-        <img src={Logo} />
+        <img src={Logo} alt='logo' />
         <DialogTitle id="alert-dialog-title" textAlign="center" fontWeight={"bold"} fontSize={"25px"}>
           {"Confirm"}
         </DialogTitle>

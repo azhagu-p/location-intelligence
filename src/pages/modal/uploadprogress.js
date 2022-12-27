@@ -38,7 +38,7 @@ export default function AlertDialog() {
                 <DialogTitle id="alert-dialog-title" textAlign="center" fontWeight={"bold"} fontSize={"25px"}>
                     {"Upload in Progress"}
                 </DialogTitle>
-                <img src={Logo} />
+                <img src={Logo} alt='logo' />
                 <DialogTitle id="alert-dialog-title" textAlign="center" fontWeight={"bold"} color={"#3955BF"}>
                     {"Ingesting"}
                 </DialogTitle>

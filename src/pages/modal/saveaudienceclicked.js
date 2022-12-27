@@ -7,7 +7,6 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Upload from '@mui/icons-material/ImageOutlined';
-import Gallery from '../../assets/gallery-add.png';
 import Divider from '@mui/material/Divider';
 
 export default function FormDialog() {

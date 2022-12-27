@@ -7,7 +7,6 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Upload from '@mui/icons-material/ImageOutlined';
-import Gallery from '../../assets/gallery-add.png';
 import Divider from '@mui/material/Divider';
 
 export default function FormDialog() {
@@ -81,7 +80,7 @@ export default function FormDialog() {
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogActions sx={{ padding: "0px" }}>
           <ButtonGroup fullWidth size='large' aria-label="outlined primary button group">
-            <Button variant='flat' onClick={handleClose} style={{ textTransform: "none", borderRadius: "0px" }}>Cancel</Button>
+            <Button variant='flat' onClick={handleClose} sx={{ textTransform: "none", borderRadius: "0px" }}>Cancel</Button>
             <Button variant='contained' onClick={handleClose} sx={{ textTransform: "none", borderRadius: "0px" }}>Create</Button>
           </ButtonGroup>
         </DialogActions>
