@@ -7,7 +7,7 @@ import React from "react";
 import SelectedCountry from "../pages/selectedCountry/SelectedCountry";
 import DeleteCrumbs from "../pages/deleteCrumbs/DeleteCrumbs";
 import CrumbsDelete from "../pages/crumbsDelete/CrumbsDelete";
-// import Map from "../pages/map/map";
+import Maps from '../pages/map/TripsMap'
 import Modal from "../pages/modal/forgotpassword_popup"
 import CreateCrumbs from "../pages/modal/createcrumbs"
 import Profile from "../pages/profile/Profile"
@@ -70,10 +70,10 @@ const UseRout = () => {
       path: "/createcrumbs",
       element: <CreateCrumbs />,
     },
-    // {
-    //   path: "/map",
-    //   element: <Map />,
-    // },
+    {
+      path: "/map",
+      element: <Maps />,
+    },
     {
       path: "/profile",
       element: <Profile />,
