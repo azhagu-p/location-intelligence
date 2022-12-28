@@ -8,8 +8,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Upload from '@mui/icons-material/ImageOutlined';
 import Divider from '@mui/material/Divider';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import Hidden from '@mui/material/Hidden';
 
-export default function FormDialog() {
+function FormDialog() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -19,6 +22,26 @@ export default function FormDialog() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  });
+
+  const { vertical, horizontal, opensnackbar } = state;
+
+  const handleClicksnackbar = (newState) => () => {
+    setState({ opensnackbar: true, ...newState });
+  };
+
+  const handleClosesnackbar = () => {
+    setState({ ...state, opensnackbar: false });
+  };
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
   return (
     <div>
@@ -73,18 +96,49 @@ export default function FormDialog() {
             startIcon={<Upload />}
           >
             Upload an image (Max 2mb)
-            <input hidden type="file" />
+              <input hidden type="file" />
           </Button>
 
         </DialogContent>
         <Divider sx={{ bgcolor: "#11121D" }} />
         <DialogActions sx={{ padding: "0px" }}>
           <ButtonGroup fullWidth size='large' aria-label="outlined primary button group">
-            <Button variant='flat' onClick={handleClose} sx={{ textTransform: "none", borderRadius: "0px" }}>Cancel</Button>
-            <Button variant='contained' onClick={handleClose} sx={{ textTransform: "none", borderRadius: "0px" }}>Create</Button>
+            <Button
+              variant='flat'
+              onClick={handleClose}
+              sx={{ textTransform: "none", borderRadius: "0px" }}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant='contained'
+              onClick={handleClicksnackbar({
+                vertical: 'top',
+                horizontal: 'right',
+              })}
+              sx={{ textTransform: "none", borderRadius: "0px" }}
+            >
+              Create
+            </Button>
+            <Snackbar
+              anchorOrigin={{ vertical, horizontal }}
+              open={opensnackbar}
+              onClose={handleClosesnackbar}
+              key={vertical + horizontal}
+              autoHideDuration={4000}
+            >
+              <Alert onClose={handleClosesnackbar} severity="success" sx={{ width: '100%' }}>
+                Crumb created
+              </Alert>
+            </Snackbar>
           </ButtonGroup>
         </DialogActions>
       </Dialog>
     </div>
   );
 }
+
+export default function Createcrumb() {
+  return <FormDialog />;
+}
+
