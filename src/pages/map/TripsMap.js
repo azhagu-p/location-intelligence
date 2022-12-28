@@ -1,45 +1,60 @@
-// import React, { Component } from "react";
-// import { Map, GoogleApiWrapper, Polygon } from "google-maps-react";
+import './Map.css';
+import React, { useRef, useEffect } from "react";
+import mapboxgl from "mapbox-gl";
 
-// const style = {
-//   width: "100%",
-//   height: "400px",
-//   position: "relative",
-// };
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWRmYWZhIiwiYSI6ImNsYzdrZ2Y1dzFqZHYzdnBna3o3Z3FzZ2EifQ.s9Msz-6bOt4zfrbnuJmlcA';
 
-// const triangleCoords = [
-//   { lat: 25.774, lng: -80.19 },
-//   { lat: 18.466, lng: -66.118 },
-//   { lat: 32.321, lng: -64.757 },
-//   { lat: 25.774, lng: -80.19 },
-// ];
+const Map = () => {
+    const mapContainerRef = useRef("map-container");
+    const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
 
-// export class MapContainer extends Component {
-//   render() {
-//     return (
-//       <div style={{ height: "400px" }}>
-//         <h1>map</h1>
-//         <Map
-//           google={this.props.google}
-//           containerStyle={style}
-//           className={"map"}
-//           zoom={14}
-//           onReady={this.fetchPlaces}
-//         >
-//           <Polygon
-//             paths={triangleCoords}
-//             strokeColor="#0000FF"
-//             strokeOpacity={0.8}
-//             strokeWeight={2}
-//             fillColor="#0000FF"
-//             fillOpacity={0.35}
-//           />
-//         </Map>
-//       </div>
-//     );
-//   }
-// }
+    // initialize map when component mounts
+    useEffect(() => {
+        const map = new mapboxgl.Map({
+            container: mapContainerRef.current,
+            // See style options here: https://docs.mapbox.com/api/maps/#styles
+            style: "mapbox://styles/mapbox/dark-v10",
+            center: [30.9876, 39.7405],
+            zoom: 3.8
+        });
 
-// export default GoogleApiWrapper({
-//   apiKey: "",
-// })(MapContainer);
+        // add navigation control (zoom buttons)
+        map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+
+        map.on('load', () => {
+            map.addSource('national-park', {
+                'type': 'geojson',
+                'data': "https://python-allpings.herokuapp.com/companies"
+            });
+
+            map.addLayer({
+                'id': 'park-boundary',
+                'type': 'fill',
+                'source': 'national-park',
+                'paint': {
+                    'fill-color': '#888888',
+                    'fill-opacity': 0.4
+                },
+                'filter': ['==', '$type', 'Polygon']
+            });
+
+            map.addLayer({
+                'id': 'park-volcanoes',
+                'type': 'circle',
+                'source': 'national-park',
+                'paint': {
+                    'circle-radius': 6,
+                    'circle-color': '#B42222'
+                },
+                'filter': ['==', '$type', 'Point']
+            });
+        });
+
+        // clean up on unmount
+        return () => map.remove();
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    return <div className="map-container" ref={mapContainerRef} />;
+};
+
+export default Map;
