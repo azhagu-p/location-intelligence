@@ -1,6 +1,10 @@
 import './Map.css';
 import React, { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import { mainListItems, secondaryListItems } from '../../components/listitem';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRmYWZhIiwiYSI6ImNsYzdrZ2Y1dzFqZHYzdnBna3o3Z3FzZ2EifQ.s9Msz-6bOt4zfrbnuJmlcA';
 
@@ -54,7 +58,18 @@ const Map = () => {
         return () => map.remove();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    return <div className="map-container" ref={mapContainerRef} />;
+    return (
+        <Box sx={{ display: 'flex', background: '#010412' }}>
+            <List component="nav" sx={{ background: '#010412' }} >
+                {mainListItems}
+                <Divider sx={{ mt: 40 }} />
+                {secondaryListItems}
+            </List>
+            <Box>
+                <div className="map-container" ref={mapContainerRef} />
+            </Box>
+        </Box>
+    );
 };
 
 export default Map;

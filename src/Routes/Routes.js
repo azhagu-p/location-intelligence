@@ -26,7 +26,6 @@ import Nav from "../components/Nav"
 import Aside from "../components/aside"
 import Drawer2 from "../pages/drawer/editprofile"
 import Snackbar from "../pages/auth/snackbar"
-import Notistack from "../pages/auth/notistack"
 
 const UseRout = () => {
   return useRoutes([
@@ -137,9 +136,6 @@ const UseRout = () => {
     {
       path: "/snackbar",
       element: <Snackbar />
-    },{
-      path: "/notistack",
-      element: <Notistack />
     }
   ]);
 };
