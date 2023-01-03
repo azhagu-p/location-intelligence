@@ -40,7 +40,7 @@ const UseRout = () => {
 
       {/* We want to protect these routes */}
       <Route element={<RequireAuth allowedRoles={["ROLE_ADMIN"]} />}>
-        <Route path="/" element={<SelectedCountry />} />
+        <Route path="/country" element={<SelectedCountry />} />
         {/* <Route path="/country" element={<SelectedCountry />} /> */}
         <Route path="/setnewpassword" element={<Forgotpassword />} />
         <Route path="/dashboard" element={<Dashboard />} />

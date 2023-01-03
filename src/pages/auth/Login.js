@@ -41,7 +41,7 @@ const Login = () => {
   const [success, setSuccess] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/country";
 
   const [values, setValues] = useState({
     email: "",
@@ -67,7 +67,7 @@ const Login = () => {
 
       setAuth(email, passwords, roles, accessToken, refreshToken);
       setSuccess(true);
-      navigate(from,{replace:true});
+      navigate(from, { replace: true });
     } catch (err) {
       if (!err.response) {
         setErrMsg("No Server Response");
