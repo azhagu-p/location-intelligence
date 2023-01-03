@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
 import { Box } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -11,15 +11,19 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { styled, Checkbox } from "@mui/material";
 import Link from "@mui/material/Link";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { IconButton, TextField } from "@mui/material";
-import Modal from '@mui/material/Modal';
-import '../crumbsDelete/CrumbsDelete.css';
+import Modal from "@mui/material/Modal";
+import "../crumbsDelete/CrumbsDelete.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { login_api } from "../../api_endpoints/common";
+
+import useAuth from "../../hooks/useAuth";
+import AuthContext from "../../context/AuthProvider";
+// import {useLocation } from "react-router-dom";
 
 const LoginButton = styled(Button)(({ theme }) => ({
   marginTop: 10,
@@ -31,26 +35,65 @@ const LoginButton = styled(Button)(({ theme }) => ({
 }));
 
 const Login = () => {
+  const { setAuth } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [success, setSuccess] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+
+  const from = location.state?.from?.pathname || "/";
+
   const [values, setValues] = useState({
     email: "",
     pass: "",
     showPass: false,
   });
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(login_api);
-    axios.post(login_api, {
-      email: values.email,
-      password: values.pass,
-    })
-      .then((res) => {
-        localStorage.setItem("token", res.data.access);
-        navigate("/country");
-      })
-      .catch((err) => console.error(err));
+
+    try {
+      const response = await axios.post(login_api, {
+        // headers:{'content-Type':'application/json'},
+        // withCredentials: true,
+        email: values.email,
+        password: values.pass,
+      });
+      console.log(JSON.stringify(response?.data));
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      const refreshToken = response?.data?.refreshToken;
+      const email = values.email;
+      const passwords = values.pass;
+
+      setAuth(email, passwords, roles, accessToken, refreshToken);
+      setSuccess(true);
+      navigate(from,{replace:true});
+    } catch (err) {
+      if (!err.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Missing Email  or Password");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+    }
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(login_api);
+  //   axios.post(login_api, {
+  //     email: values.email,
+  //     password: values.pass,
+  //   })
+  //     .then((res) => {
+  //       localStorage.setItem("token", res.data.access);
+  //       navigate("/country");
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
 
   const handlePassVisibility = () => {
     setValues({
@@ -130,17 +173,24 @@ const Login = () => {
               />
             </Box>
             <Box>
-              <FormControlLabel sx={{ color: "grey" }} control={<Checkbox defaultChecked color="primary" />} label="Remember  me" />
+              <FormControlLabel
+                sx={{ color: "grey" }}
+                control={<Checkbox defaultChecked color="primary" />}
+                label="Remember  me"
+              />
               <Link
                 component="button"
                 variant="body2"
                 onClick={handleOpen}
                 underline="hover"
-                sx={{ marginLeft: "75px", color: "grey" }}>
+                sx={{ marginLeft: "75px", color: "grey" }}
+              >
                 Forgot Password?
               </Link>
             </Box>
-            <LoginButton variant="contained" type="submit">Sign in</LoginButton>
+            <LoginButton variant="contained" type="submit">
+              Sign in
+            </LoginButton>
           </form>
           <Modal
             open={open}
@@ -158,7 +208,9 @@ const Login = () => {
                     <Box className="form">
                       <TextField
                         label="Enter your mail address"
-                        InputLabelProps={{ style: { fontSize: 25, color: "grey" } }}
+                        InputLabelProps={{
+                          style: { fontSize: 25, color: "grey" },
+                        }}
                         focused
                         fullWidth
                         sx={{ m: 3 }}
@@ -177,7 +229,11 @@ const Login = () => {
                         }
                       />
                     </Box>
-                    <LoginButton onClick={handleClose} type="submit" sx={{ textTransform: "none" }}>
+                    <LoginButton
+                      onClick={handleClose}
+                      type="submit"
+                      sx={{ textTransform: "none" }}
+                    >
                       Forgot Password
                     </LoginButton>
                   </form>

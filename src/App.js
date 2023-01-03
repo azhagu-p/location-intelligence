@@ -1,12 +1,15 @@
 import "./App.css";
 import React from "react";
 import UseRoute from "./Routes/Routes.js";
+import { Routes,Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <main className="App">
       <UseRoute />
-    </div>
+    </main>
+
+      
   );
 }
 
